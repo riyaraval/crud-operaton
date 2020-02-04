@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "id": 12,
+      "name": "riya",
+      "semester": 8
+    },
+    {
+      "id": 1,
+      "name": "nirali",
+      "semester": 8
+    },
+    {
+      "id": 2,
+      "name": "mehul",
+      "semester": 8
+    },
+    {
+      "id": 3,
+      "name": "kishan",
+      "semester": 8
+    },
+    {
+      "id": 4,
+      "name": "kalp",
+      "semester": 7
+    },
+    {
+      "id": 5,
+      "name": "ayushi",
+      "semester": 7
+    },
+    {
+      "id": 6,
+      "name": "riya",
+      "semester": 8
+    },
+    {
+      "id": 7,
+      "name": "nirali",
+      "semester":8
+    },
+    {
+      "id": 8,
+      "name": "mehul",
+      "semester": 8
+    },
+    {
+      "id": 9,
+      "name": "kishan",
+      "semester": 8
+    },
+    {
+      "id": 10,
+      "name": "kalp",
+      "semester": 7
+    },
+    {
+      "id": 11,
+      "name": "ayushi",
+      "semester": 7
+    }
+  ]
+}
