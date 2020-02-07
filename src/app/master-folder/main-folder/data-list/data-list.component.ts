@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../../services/employee.service';
+import { StudentService } from '../../services/student.service';
+import { NgxSpinnerService } from "ngx-spinner";
+
 
 @Component({
   selector: 'app-data-list',
@@ -8,19 +10,24 @@ import { EmployeeService } from '../../services/employee.service';
 })
 export class DataListComponent implements OnInit {
 
-  constructor(private _employeeService:EmployeeService) { }
-  
-  employee=[];
+  constructor(private _studentService: StudentService, private SpinnerService: NgxSpinnerService) { }
 
+  student = [];
   ngOnInit() {
-    this._employeeService.getEmployees().subscribe(data=>this.employee=data);
+    this._studentService.getStudents().subscribe(data => {
+      this.student = data;
+    });
+    this.SpinnerService.hide();
   }
 
-  deleteData(id){
-    if (window.confirm('Are you sure, you want to delete?')){
-      this._employeeService.delete(id).subscribe(data => {
-        this._employeeService.getEmployees().subscribe(d=>this.employee=d);
-      })
+  deleteData(id) {
+    if (window.confirm('Are you sure, you want to delete?')) {
+      this.SpinnerService.show();
+      this._studentService.deleteStudent(id).subscribe();
+      this._studentService.getStudents().subscribe(data => {
+        this.student = data;
+      });
+      this.SpinnerService.hide();
     }
   }
 }

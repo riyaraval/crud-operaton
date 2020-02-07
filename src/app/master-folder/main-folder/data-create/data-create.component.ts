@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../../services/employee.service';
-import { IEmployee } from '../../models/IEmployee';
+import { StudentService } from '../../services/student.service';
+import { IStudent } from '../../models/IStudent';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,15 +10,15 @@ import { Router } from '@angular/router';
 })
 export class DataCreateComponent implements OnInit {
 
-  constructor(private _employeeService:EmployeeService, private route:Router) { }
+  constructor(private _studentService:StudentService, private route:Router) { }
   data={};
 
   ngOnInit() {
   }
   addData(){
-    this._employeeService.create(this.data).subscribe((d:{})=>{
+    this._studentService.createStudent(this.data).subscribe((d:{})=>{
       console.log(this.data);
-      this.route.navigateByUrl('/data-list');
+      this.route.navigateByUrl('/data/data-list');
     })
   }
 

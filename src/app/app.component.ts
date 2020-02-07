@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { EmployeeService } from './master-folder/services/employee.service';
-import { IEmployee } from './master-folder/models/IEmployee';
+import { NgxSpinnerService } from "ngx-spinner";
+
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,15 @@ import { IEmployee } from './master-folder/models/IEmployee';
 })
 export class AppComponent {
   
-
   ngOnInit(){
+    this.SpinnerService.show();
   }
+
+  constructor( private SpinnerService: NgxSpinnerService){}
+
+  kickOutUser(){
+    this.SpinnerService.show();
+    window.localStorage.removeItem("token");
+  }
+
 }
